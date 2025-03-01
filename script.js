@@ -24,10 +24,12 @@ function openLightbox(imgSrc, name) {
   lightboxImg.src = imgSrc;
   photographerName.textContent = name;
   lightbox.classList.add("show");
+  document.body.style.overflow = "hidden";
 }
 
 function closeLightboxFunc() {
   lightbox.classList.remove("show");
+  document.body.style.overflow = "auto";
 }
 
 images.addEventListener("click", function (event) {
@@ -36,6 +38,7 @@ images.addEventListener("click", function (event) {
 
   let photographer = clickedImg.closest(".card").querySelector(".photographer span").textContent;
   openLightbox(clickedImg.src, photographer);
+  
 });
 
 closeLightbox.addEventListener("click", closeLightboxFunc);
