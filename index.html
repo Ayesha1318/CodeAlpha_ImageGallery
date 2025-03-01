@@ -6,79 +6,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Gallery</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Moon+Dance&family=Oswald:wght@200..700&family=Playwrite+HR+Lijeva:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+    </style>
 </head>
 
 <body>
+
   <div class="lightbox">
     <div class="wrapper">
       <header>
         <div class="photographer">
-          <i class="uil uil-camera"></i>
-          <span>Maria Loznevaya</span>
+          <img src="camera.svg" alt="img">
+          <span class="photographer-name"></span>
         </div>
-        <div class="button">
-          <i class="uil uil-import"></i>
-          
-          <i class="uil uil-times"></i>
-          </div>
-          
-        
+        <div class="buttons">
+          <img src="cross.svg" alt="Close" class="close-lightbox">
+        </div>
       </header>
       <div class="preview-img">
-        <div class="img"><img src="images/image3.jpg" alt="preview">
-        </div>
+        <div class="img"><img src="" alt="preview-img" class="pre-img"></div>
       </div>
     </div>
   </div>
-  <main>
-    <section class="search">
-      <img src="images/background.webp">
+  
 
-      <div class="search-bar">
-        <h2>Image Gallery</h2>
-        <h3>
-          Search and download any image
-        </h3>
-        <div class="search-box">
-          <i class="uil uil-search"></i>
-
-          <input type="text" placeholder="Search image...">
-
-        </div>
-
+  <div class="search-area">
+    <div class="black"></div>
+    <div class="content">
+      <h1>SNAPP!X</h1>
+      <p>Search and download any images..</p>
+      <div class="search-box">
+        <input type="text" placeholder="Search images....">
+      
+       <div class="btn">
+        <button><img src="search.svg" alt="image"></button></div>
       </div>
-    </section>
-    <section class="gallery">
+    </div>
+  </div>
+   
+  <main>
+    <div class="image-gallery">
       <ul class="images">
         <li class="card">
-          <img src="images/image1.jpg" alt="" srcset="">
+          
+          <img src="images/image1.jpg" alt="img" class="photo">
           <div class="details">
             <div class="photographer">
-              <i class="uil uil-camera"></i>
+              <img src="camera.svg" alt="img">
               <span>Maria Loznevaya</span>
             </div>
-            <button><i class="uil uil-import"></i></button>
+          
           </div>
         </li>
-        <li class="card"><img src="images/image2.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image3.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image4.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image5.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image6.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image7.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image8.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image9.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image10.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image11.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image12.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image13.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image14.jpg" alt="" srcset=""></li>
-        <li class="card"><img src="images/image15.jpg" alt="" srcset=""></li>
-
+        <li class="card"><img src="images/image2.jpg" alt="img" class="photo">
+          <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Oliver James</span>
+            </div>
+           
+          </div>
+        </li>
+        <li class="card"><img src="images/image3.jpg" alt="img" class="photo">
+          <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Jack connor</span>
+            </div>
+           
+          </div>
+        </li>
+        <li class="card"><img src="images/image4.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Chaelie Kyle</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image5.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Robert Johnson</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image6.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Oscar Wilde</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image7.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Amelia Margaret</span>
+            </div>
+        </li>
+        <li class="card"><img src="images/image8.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Emily Hopps</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image9.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Poppy Megan</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image10.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Ava Loznevaya</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image11.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>George William</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image12.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Maria Loznevaya</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image13.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Alexander</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image14.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Thomas</span>
+            </div>
+          </div>
+        </li>
+        <li class="card"><img src="images/image15.jpg" alt="img" class="photo">
+        <div class="details">
+            <div class="photographer">
+              <img src="camera.svg" alt="img">
+              <span>Liam Jake</span>
+            </div>
+          </div>
+        </li>
+        
       </ul>
       <button class="load-more">Load more</button>
-    </section>
+    </div> 
   </main>
   <script src="script.js"></script>
 </body>

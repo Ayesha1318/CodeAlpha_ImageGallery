@@ -1,71 +1,111 @@
-*{
+ *{
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.search{
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.search img{
-  height: 100%;
+body{
   width: 100%;
-  position: absolute;
+  height: 100%;
 }
-.search-bar{
- position: relative;
-  color: white;
-  padding: 66px;
-  margin: 12px;
-}
-.search-bar h2{
-  text-align: center;
-  font-size: 40px;
-  /* font-weight: 400; */
-  padding-bottom: 12px;
-}
-.search-bar h3{
-  font-size: 30px;
-  /* font-weight: 400; */
-}
-.search .search-box{
-  height: 46px;
-  margin: 45px 0px;
+.search-area{
+  background-image:url("images/background.webp");
+  width: 100%;
+  height: 300px;
+  background-size: 100% 100%;
   position: relative;
 }
-.search-box i{
+.black{
+  background-color: rgba(0, 0, 0, 0.312);
   position: absolute;
-  left: 2px;
-  top: 50%;
-  color: black;
-  font-size: 1.4rem;
-  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+
+}
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 5;
+  gap: 15px;
+}
+.content h1{
+  color: white;
+  font-size: 4vw;
+  
+  /* font-family: "Playwrite HR Lijeva", cursive; */
+  font-family: "Delius Unicase", cursive;
+
+}
+.content p{
+  color: white;
+  font-size: 1.5vw;
+  /* font-family: "Moon Dance", cursive; */
+  /* font-family: "Playwrite HR Lijeva", cursive; */
+  font-family: "Delius Unicase", cursive;
+}
+.search-box{
+  width: 40%;
+  height: 17%;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+display: flex;
+  
 }
 .search-box input{
-  width: 100%;
+  width: 80%;
   height: 100%;
   border: none;
   outline: none;
-  flex: 1;
- padding-left: 32px;
- font-size: 1rem;
- border-radius: 14px;
+  padding-left: 20px ;
+  font-size: 1vw;
+  
 }
-.gallery{
+.btn{
+  width: 20%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 20px;
+}
+.btn button{
+  width: 37px;
+  height: 37px;
+  border-radius: 20px;
+  background-color: rgba(17,65,52,1);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.btn button:hover{
+  background-color: rgb(7, 34, 27);
+
+}
+
+
+.image-gallery{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.gallery .images{
+.image-gallery .images{
   columns: 3 340px;
-  gap: 15px;
+  gap: 10px;
   margin-top: 25px;
   /* margin-left: 20px; */
  
   max-width: 95%;
 }
+
 .images .card{
   position: relative;
   list-style: none;
@@ -73,12 +113,14 @@
   border-radius: 10px;
   display: flex;
   overflow: hidden;
+  cursor: pointer;
  
 }
-.card img{
+.photo{
   width: 100%;
+  height: 100%;
 }
-.gallery .load-more{
+.image-gallery .load-more{
   outline: none;
   padding: 12px;
   border: none;
@@ -86,7 +128,8 @@
   border-radius: 12px;
   margin-bottom: 30px;
   font-size: 15px;
-
+  transition: all 0.4s;
+  display: none;
 }
 .load-more:hover{
   background-color: rgba(210, 204, 204, 0.914);
@@ -94,73 +137,132 @@
 .images .details{
   position: absolute;
   bottom: -100px;
-  font-size: 18px;
+  /* bottom: 0; */
+  font-size: 15px;
   display: flex;
   color: white;
   width: 100%;
+  /* height: 20%; */
   justify-content: space-between;
   align-items: center;
-  transition: bottom 0.1s ease;
-
+  transition: bottom 0.2s ease;
+  /* margin-bottom: 12px; */
+  padding: 20px;
+  background: linear-gradient(to top,black,transparent);
 }
-.images .card:hover .details{
-  bottom: 0;
+.details .photographer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+ .images .card:hover .details{
+  bottom: 0; 
   
-}
-.images .details button{
-  outline: none;
-  border: none;
-  padding: 9px;
-
-  font-size: 20px;
+} 
+ .download{
+  background: rgb(11, 81, 71);
+  /* padding: 2px; */
   cursor: pointer;
-  color: white;
-  background-color: transparent;
- 
-}
-.images .details button:hover{
-  color: rgba(165, 150, 144, 0.836);
+  border-radius: 10px;
+  transition: all 0.4s;
+  
+ }
+
+ .download:hover{
+  background-color: rgb(7, 52, 46);
 }
 .lightbox{
-  height: 100%;
+  position: fixed;
+  z-index: 5;
   width: 100%;
- position: fixed;
- z-index: 5;
- display: none;
- background: rgb(0,0,0,0.65);  
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: none;
 }
-.lightbox img{
- height: 540px;
- width: 516px;
+.lightbox.show{
+  display: block;
+}
+.preview-img{
+  display: flex;
+  justify-content: center;
+  /* margin-top: 12px; */
+}
+.preview-img .pre-img{
+  height: 614px;
+  width: 450px;
 }
 .lightbox .wrapper{
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  padding: 10px;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  max-width: 850px;
+  background: rgb(198, 190, 190);
+  border-radius: 5px;
+
+}
+.wrapper .preview-img .img{
+  max-height: 90vh;
+  max-width: 90vw;
 }
 .wrapper header{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: white;
-  font-size: 20px;
+  justify-content: space-between;
+}
+header .photographer{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* font-size: 1.5rem; */
+}
+header .photographer span{
+  
+  font-size: 1.1rem;
 }
 
-header .button i{
-  width: 35px;
-  height: 35px;
-  font-size: 1.2rem;
-  display: inline-block;
-  background: rgb(220, 119, 136);
-  text-align: center;
-  line-height: 35px;
-  color: white;
-  border-radius: 14px;
-  cursor: pointer;
-  margin-bottom: 8px;
+.buttons img{
+   margin-left: 10px;
+   background: rgb(131, 129, 129);
 }
-.button i:last-child{
-  margin-left: 15px;
-  background: grey;
+
+.buttons img:hover{
+  background-color: rgb(95, 92, 92);
+}
+
+@media (max-width:1230px) {
+  .search-area{
+    /* background-image:url("images/background.webp"); */
+    width: 100%;
+    height: 400px;
+  }
+  .content h1{
+    /* color: white; */
+    font-size: 6vw;
+  }
+  .content p{
+    /* color: white; */
+    font-size: 3.5vw;
+  }
+  .search-box{
+    width: 60%;
+    height: 14%;
+  }
+  .search-box input{
+    font-size: 2.5vw;
+    
+  }
+  .btn button{
+    width: 43px;
+    height: 43px;
+    
+  }
+  .btn{
+    width: 30%;
+   
+  }
 }
