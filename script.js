@@ -6,8 +6,12 @@ let lightbox = document.querySelector(".lightbox");
 let lightboxImg = document.querySelector(".pre-img");
 let photographerName = document.querySelector(".photographer-name");
 let closeLightbox = document.querySelector(".close-lightbox");
+require('dotenv').config();
 
-const apiKey = "yK5x27vGsAgNnVxb0xE00j5yZiRvMmjLDwMLJAhtvhk";
+const apiKey = process.env.API_KEY;  
+
+
+
 const perPage= 20;
 let keyword = "";
 let currentpage = 1;
